@@ -1,0 +1,553 @@
+<html>
+<html lang="ti">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ፐርፌክት ቴክኖሎጂ | Perfect Technology</title>
+    <!-- Enhanced Google Fonts for supreme readability and fancy aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Ethiopic:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0a0c10;
+            --card-glass: rgba(22, 27, 34, 0.75);
+            --border-glass: rgba(255, 255, 255, 0.12);
+            --accent-red: #e63946;
+            --accent-gold: #ffb703;
+            --accent-tiktok: #fe2c55;
+            --text-primary: #f8f9fa;
+            --text-secondary: #a0aec0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Noto Sans Ethiopic', 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            letter-spacing: -0.01em;
+        }
+
+        /* Glass Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(16px);
+            background: rgba(10, 12, 16, 0.85);
+            border-bottom: 1px solid var(--border-glass);
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-logo-img {
+            width: 200px;
+            height: 100px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 15px rgba(230, 57, 70, 0.6));
+        }
+
+        .brand-logo h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 30%, var(--accent-red) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(230, 57, 70, 0.2);
+        }
+
+        .brand-logo p {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            letter-spacing: 0.02em;
+            margin-top: 4px;
+        }
+
+        .badge-location {
+            background: rgba(230, 57, 70, 0.15);
+            border: 1px solid var(--accent-red);
+            color: #ff6b6b;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            box-shadow: 0 0 15px rgba(230, 57, 70, 0.2);
+        }
+
+        /* Hero Section */
+        .hero-container {
+            padding: 120px 8% 80px;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(rgba(10, 12, 16, 0.85), rgba(10, 12, 16, 0.95)), 
+                        url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat fixed;
+        }
+
+        .hero-container h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.3;
+            color: #ffffff;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.6);
+        }
+
+        .hero-container p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 780px;
+            margin: 0 auto 35px;
+            line-height: 1.8;
+        }
+
+        /* Handwritten Personal Touch Element */
+        .handwritten-signature {
+            font-family: 'Caveat', cursive;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            transform: rotate(-2deg);
+            margin-bottom: 30px;
+            display: inline-block;
+            border-bottom: 2px dashed rgba(255, 183, 3, 0.5);
+            padding-bottom: 6px;
+            letter-spacing: 0.02em;
+            filter: drop-shadow(0 2px 8px rgba(255, 183, 3, 0.25));
+        }
+
+        /* Social Media / TikTok Button Bar in Hero */
+        .hero-socials {
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .tiktok-btn {
+            background: rgba(254, 44, 85, 0.15);
+            border: 1px solid var(--accent-tiktok);
+            color: #ff859c;
+            padding: 12px 26px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(254, 44, 85, 0.2);
+        }
+
+        .tiktok-btn:hover {
+            background: var(--accent-tiktok);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(254, 44, 85, 0.4);
+        }
+
+        /* Brands Bar */
+        .brands-bar {
+            padding: 35px 8%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            background: rgba(15, 20, 28, 0.9);
+            border-top: 1px solid var(--border-glass);
+            border-bottom: 1px solid var(--border-glass);
+        }
+
+        .brand-pill {
+            background: var(--card-glass);
+            border: 1px solid var(--border-glass);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            color: #e2e8f0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: 90px 8%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h3 {
+            font-size: 2.3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #ffffff 50%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 20px;
+            padding: 40px 30px;
+            backdrop-filter: blur(12px);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .service-card:hover {
+            border-color: var(--accent-red);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(230, 57, 70, 0.2);
+        }
+
+        .service-card h4 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 1.02rem;
+            font-weight: 400;
+            line-height: 1.75;
+        }
+
+        /* Official Business Contact Section */
+        .contact-section {
+            margin: 0 8% 80px;
+            background: linear-gradient(135deg, rgba(22, 27, 34, 0.95) 0%, rgba(230, 57, 70, 0.15) 100%);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 60px 40px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .contact-section h3 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .contact-section p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .address-detail {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+            letter-spacing: 0.01em;
+            text-shadow: 0 0 15px rgba(255, 183, 3, 0.3);
+        }
+
+        .phones-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .phone-card {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid var(--border-glass);
+            padding: 14px 26px;
+            border-radius: 14px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.05rem;
+            letter-spacing: 0.02em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .phone-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+
+        /* --- Floating Trigger Badge --- */
+        .developer-badge-floating {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(22, 27, 34, 0.92);
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 12px 22px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .developer-badge-floating:hover {
+            transform: scale(1.05);
+            background: var(--accent-gold);
+            color: #000;
+            box-shadow: 0 8px 30px rgba(255, 183, 3, 0.4);
+        }
+
+        /* --- Modal Popup Overlay --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-card {
+            background: #11161d;
+            border: 1px solid var(--accent-red);
+            border-radius: 24px;
+            padding: 45px 35px;
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(230, 57, 70, 0.35);
+            animation: popup 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes popup {
+            from { transform: scale(0.85); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .modal-close:hover {
+            color: #fff;
+        }
+
+        .modal-card h4 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
+        }
+
+        .modal-card p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .creator-contact-btn {
+            display: inline-block;
+            background: var(--accent-red);
+            color: #fff;
+            padding: 14px 30px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+            box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .creator-contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.6);
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px;
+            border-top: 1px solid var(--border-glass);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="brand-container">
+            <img src="Capture.PNG" alt="Perfect Technology Logo" class="brand-logo-img">
+            <div class="brand-logo">
+                <h1>PERFECT TECHNOLOGY</h1>
+                <p>ፐርፌክት ቴክኖሎጂ</p>
+            </div>
+        </div>
+        <div class="badge-location">📍 መቐለ፣ ቀበሌ 15 | Mekelle, Kebelle 15</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-container">
+        <h2>ልዑል ፅሬት ዘለዎም ናይ ኦፊስ ማሽነሪታት</h2>
+        <p>Reliable sales, maintenance, and technical solutions for commercial copiers and multi-brand printing systems in Tigray.</p>
+
+        <div class="handwritten-signature">
+            ✨ Crafted with passion & precision — ፅሬት ብእሙንነት!
+        </div>
+
+        <!-- TikTok Account Link Button -->
+        <div class="hero-socials">
+            <a href="https://www.tiktok.com/@habenperfect6" target="_blank" class="tiktok-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.45v13.674a2.89 2.89 0 0 1-5.201 1.743 2.89 2.89 0 0 1 2.31-4.64v-3.498a6.34 6.34 0 0 0-5.76 6.315 6.34 6.34 0 0 0 6.34 6.34 6.337 6.337 0 0 0 6.339-6.339V8.57a8.217 8.217 0 0 0 4.802 1.504V6.634a4.812 4.812 0 0 1-1.611.052z"/>
+                </svg>
+                Join our TikTok Community 
+            </a>
+        </div>
+    </section>
+
+    <!-- Supported Brands -->
+    <section class="brands-bar">
+        <div class="brand-pill">EPSON</div>
+        <div class="brand-pill">HP</div>
+        <div class="brand-pill">Konica Minolta</div>
+        <div class="brand-pill">Brother</div>
+        <div class="brand-pill">Canon</div>
+        <div class="brand-pill">Kyocera</div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="services-section">
+        <div class="section-header">
+            <h3>ኣገልግሎትና / Our Services</h3>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h4>🖨️ መሸጣ ማሽናት (Sales)</h4>
+                <p>ዓበይትን ኣናእሽተይን ናይ ፎቶኮፒ ማሽናት፣ Black & White ከምኡ'ውን Color ፕሪንተራት ብተመጣጣኒ ዋጋ ንህብ።</p>
+            </div>
+            <div class="service-card">
+                <h4>🛠️ ንሃቦ ፅገና (Maintenance)</h4>
+                <p>ናይ ሶፍትዌርን ሃርድዌርን ፀገማት ንፈትሕ።</p>
+            </div>
+            <div class="service-card">
+                <h4>⚙️ መተካእታ ኣቑሑት (Spare Parts)</h4>
+                <p>ንኹሎም ዓይነታት ማሽናት ኦሪጂናል መተካእታ ኣቑሑትን ቀለምን (Toner/Ink) ብፅሬት ነቕርብ።</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Official Business Contact Section -->
+    <section class="contact-section">
+        <h3>ያነጋግሩና / Perfect Technology Contacts</h3>
+        <p>ማሽን ንምግዛእ፣ ቀለም ንምምላእ ወይ ናይ ፅገና ኣገልግሎት ንምርካብ ብዞም ዝስዕቡ ቁጽርታት ይደውሉልና፡</p>
+        <div class="address-detail">📍 ኣድራሻ፡ መቐለ፣ ቀበሌ 15 (Mekelle, Kebelle 15)</div>
+        <div class="phones-container">
+            <a href="tel:0932326887" class="phone-card">📞 0932 32 68 87</a>
+            <a href="tel:0914305658" class="phone-card">📞 0914 30 56 58</a>
+            <a href="tel:0914991070" class="phone-card">📞 0914 99 10 70</a>
+        </div>
+    </section>
+
+    <!-- Floating Trigger Badge -->
+    <div class="developer-badge-floating" onclick="openModal()">
+        💻 Dev by Simon
+    </div>
+
+    <!-- Modal Popup Overlay -->
+    <div class="modal-overlay" id="devModal">
+        <div class="modal-card">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h4>💻 ዌብሳይት ዲዛይንን ሰራሕተይናን</h4>
+            <p>Developed by <strong>Simon</strong>. ናይ ዌብሳይት ዲዛይን ንምእዛዝ ብዚ ዝስዕብ ቁፅሪ ይደውሉ፡</p>
+            <a href="tel:0968894994" class="creator-contact-btn">📞 0968 89 49 94</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; Perfect Technology — Mekelle, Kebelle 15, Tigray. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        function openModal() {
+            document.getElementById('devModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('devModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('devModal');
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
